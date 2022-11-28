@@ -1,4 +1,4 @@
-# Technologies:
+## Technologies:
 - Python
 - Django
 - Django REST Framework
@@ -7,7 +7,7 @@
 - Swagger
 - GitHub Actions
 
-# Docker:
+## Docker:
 docker build .
 docker-compose build
 
@@ -19,7 +19,7 @@ docker-compose run --rm app sh -c "python manage.py startapp core"
 docker-compose up
 
 
-# Testing with Django -> Django test framework - based on unittest library
+## Testing with Django -> Django test framework - based on unittest library
 python manage.py test
 
 docker-compose run --rm app sh -c "python manage.py test"
@@ -28,7 +28,7 @@ docker-compose run --rm app sh -c "python manage.py test"
 
 Testing APIs -> Django REST Framework API Client
 
-# Database
+## Database
 - psycopq2 - most popular PostgreSQL adaptor for python
 			- has some dependencies (C compiler, python3-dev, libpq-dev)
 
@@ -39,15 +39,14 @@ docker-compose up
 Fixing database race dondition -> wait_for_db command
 
 
-
-
 docker-compose run --rm app sh -c "python manage.py startapp core"
 docker-compose run --rm app sh -c "python manage.py test"
 
 docker-compose run --rm app sh -c "python manage.py wait_for_db"
 
 
-Clear volume:
+# Clear volume:
+docker-compose down
 docker volume ls
 docker volume rm recipe-app-api_dev-db-data
 
