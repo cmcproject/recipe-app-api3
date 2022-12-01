@@ -72,10 +72,13 @@ PUT- change everything
 1.add dependencies
 Dockerfile: jpeg-dev
 
-STATIC VS MEDIA
+# STATIC VS MEDIA
+- files not generated py Python code (Images, CSS, JavaScript, Icons)
+- 2 types:
+MEDIA - uploaded at runtime (e.g.: user uploads)
+STATIC - generated on build
 
-Gather all static files:
-python manage.py collectstatic
+python manage.py collectstatic - Gather all static files
 
 ### Deployment
 docker build . -> use this when there is not docker-compose, only Dockerfile
